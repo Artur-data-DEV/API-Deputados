@@ -4,6 +4,7 @@ import {Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Cartao from '../components/Cartao'
 import apiCamara from '../services/apiCamara'
+import "../Style/Style-Deputados.css"
 
 
 const Deputados = () => {
@@ -20,6 +21,8 @@ const Deputados = () => {
 
 
     return (
+    <div class="deputados">
+
         <Container>
 
 
@@ -44,6 +47,7 @@ const Deputados = () => {
                 ))}
             </Row>
         </Container>
+    </div>
     )
 }
 

@@ -55,7 +55,7 @@ const PaginaInicial = () => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <img src={logo} alt="Logo"/> 
+        <img src={logo} alt="Logo"/>
         <Col md={6}>
           <ListGroup className='listGroup'>
             <ListGroup.Item className="listGroupItem2" >

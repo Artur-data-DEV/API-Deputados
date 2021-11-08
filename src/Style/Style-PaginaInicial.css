@@ -1,56 +1,66 @@
 
+
 .pagina{ 
     width: 100%;
     height : 100vh; 
     display: flex;
     position: fixed;
     background-image: url(../assets/icons/deputados-federais.jpg);
-
+    
     background-size: cover;
+    background-size: ;
+    
+  
     
     
     
 }
 
+.container{ 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px; 
+    
+   
+   
+
+
+}
+
 .listGroup{
   
     text-decoration: none;
-    opacity: 0.8; 
-    letter-spacing: .1rem;    
+    opacity: 0.82;
     text-shadow: .2rem .2rem 2px rgba(0, 0, 0, .4);        
-    background-image: url('../assets/icons/cienciapolitica.png')    
+      
 }
 
 .listGroupItem {
     display: flex;
     justify-content: flex-start;
     align-items:center;
-
+    margin: 1%;
+    height: 100px;
+    padding-left: 25%;
+   
+   
+    
 }
 .listGroupItem2 {
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items:center;
-
-}
-
-
-
-
-.container{ 
-
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    border-radius: 50%;
-    margin-top: 3%;
-    margin-bottom: 6%;
-   
-  
-    
+    margin: 1%;
+    height: 100px;
+    padding-right: 25%;
 
 
 }
+
+
+
 
 @keyframes zoom{
     0%{

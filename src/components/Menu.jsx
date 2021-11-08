@@ -16,7 +16,7 @@ const Menu = () => {
           <Navbar.Brand href="/"><img src={logo}/></Navbar.Brand>
           <Nav>
             <Link className="nav-link" to="/blocos">
-              Blocos
+              Blocos 
             </Link>
             <Link className="nav-link" to="/deputados">
               Deputados
@@ -28,9 +28,7 @@ const Menu = () => {
               Frentes
             </Link>
 
-            <Link className="nav-link" to="/legislaturas">
-              Legislatura
-            </Link>
+            
             <Link className="nav-link" to="/partidos">
               Partidos
             </Link>

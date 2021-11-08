@@ -1,0 +1,10 @@
+
+
+.Menu{
+ text-align: center;
+ align-items: center;
+ align-self: center;
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap-reverse;
+}

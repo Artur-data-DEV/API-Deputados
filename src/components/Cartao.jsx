@@ -1,11 +1,12 @@
+import { Avatar, Card } from '@mui/material'
 import React from 'react'
-import { Card } from 'react-bootstrap'
+
 
 const Cartao = (props) => {
     return (
         <>
-          <Card>
-                  <Card.Img variant="top" src={props.src} />
+          <Card sx={{ maxWidth: 345 }} >
+                  <Card.Img  componentvariant="darkcenter" src={props.src} sx={{ width: 100, height: 100, alignItems: 'center', display: 'flex' }} />
                   <Card.Body>
                     <Card.Title>{props.title} </Card.Title>
                     <hr />

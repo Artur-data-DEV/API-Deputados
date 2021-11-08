@@ -1,19 +1,17 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Menu from './components/Menu.jsx'
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
-import Router from "./Router";
-
-
+import Rotas from "./Rotas";
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
-          <Router/>
+      <Menu />
+        <Rotas />       
       </BrowserRouter>
-      
     </>
-   
   );
 }
 

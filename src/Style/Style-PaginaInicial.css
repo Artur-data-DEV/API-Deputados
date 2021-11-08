@@ -1,25 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Catamaran:wght@100;200;300;400&family=Fjalla+One&display=swap');
 
-#pagina{ 
+.pagina{ 
     width: 100%;
     height : 100vh; 
-    overflow: hidden;
-    position: relative;
+
+    position: fixed;
+    
+    
 }
 
-.img-wrapper{ 
+.listGroup{
+    color:beige;
+    font-size: 30px;
+  
+    text-decoration: none;
+    display: flex;
+    opacity: 1;
+    letter-spacing: .1rem;
+    padding: 8px;
+    text-shadow: .2rem .2rem 2px rgba(0, 0, 0, .4);     
+   
+    background-image: url('../assets/icons/cienciapolitica.png')    
+}
+
+
+
+
+.backgroundImg{ 
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-
-}
-
-.img-wrapper img{ 
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.3;
-    animation: zoom 20s;
+    opacity: 0.7;
+    animation: zoom 1.6;
+    position: fixed;
+    background-image: url(../assets/icons/2021-02-01t233816z-1430889166-rc2zjl95adgb-rtrmadp-3-brazil-politics.jpg)
 
 }
 
@@ -61,11 +75,12 @@
     font-size: 30px;
     font-family: "Catamaran";
     text-decoration: none;
-    display:block;
+    display: flex;
+    opacity: 1;
     letter-spacing: .1rem;
     padding: 8px;
     text-shadow: .2rem .2rem 2px rgba(0, 0, 0, .4);     
-    animation: moveBanner 3s 0.5s forwards;
+    animation: moveBanner 0.5s 0.5s backwards;
 }
 
 @keyframes moveBanner{

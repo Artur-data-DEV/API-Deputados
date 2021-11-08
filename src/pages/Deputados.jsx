@@ -17,11 +17,10 @@ const Deputados = () => {
     }, [])
 
 
-    console.log(deputados)
 
     return (
         <Container>
-            <h1>Página Deputados</h1>
+
 
             <Row className="mt-4">
                 {deputados.map(deputado => (

@@ -2,8 +2,7 @@ import React from "react";
 import { ListGroup, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../Style/Style-PaginaInicial.css";
-import { FiChevronsRight } from "react-icons/fi";
-import cienciapolitica from "../assets/icons/cienciapolitica.png"
+
 
 const PaginaInicial = () => {
   return (

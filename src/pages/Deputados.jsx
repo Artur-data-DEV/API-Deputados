@@ -7,6 +7,7 @@ import apiCamara from '../services/apiCamara'
 
 
 const Deputados = () => {
+    
     const [deputados, setdeputados] = useState([])
 
     useEffect(() => {

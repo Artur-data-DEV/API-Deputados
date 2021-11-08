@@ -2,6 +2,8 @@ import Button from "@restart/ui/esm/Button"
 import { Container, Form, FormControl, Nav, Navbar } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import logo from "../assets/icons/logo-camara.png"
+import "../Style/Style-Menu.css"
+
 
 
 
@@ -10,9 +12,9 @@ const Menu = () => {
   return (
     <div>
       <Navbar bg="dark" variant="dark" >
-        <Container fluid className='Menu' >
-          <Navbar.Brand href="/"><img src={logo} width="200px" /></Navbar.Brand>
-          <Nav className='Menu'>
+        <Container fluid >
+          <Navbar.Brand href="/"><img src={logo}/></Navbar.Brand>
+          <Nav>
             <Link className="nav-link" to="/blocos">
               Blocos
             </Link>
@@ -47,7 +49,10 @@ const Menu = () => {
               Órgãos
             </Link>
 
-            <Form className="d-flex">
+          
+
+          </Nav>
+          <Form className="d-flex">
               <FormControl
 
                 type="procurar"
@@ -57,8 +62,6 @@ const Menu = () => {
               />
               <Button variant="outline-success">Search</Button>
             </Form>
-
-          </Nav>
         </Container>
       </Navbar>
     </div>

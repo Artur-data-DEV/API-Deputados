@@ -1,4 +1,5 @@
-import { Avatar, Card } from '@mui/material'
+import { Avatar } from '@mui/material'
+import {Card} from 'react-bootstrap'
 import React from 'react'
 
 

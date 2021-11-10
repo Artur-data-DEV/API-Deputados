@@ -1,62 +1,91 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Card, CardImg, Col, Row } from 'react-bootstrap'
+import apiCamara from '../services/apiCamara.js'
 
 const DeputadosDetalhes = (props) => {
-    const [deputados, setdeputados] = useState({})
-    const [despesas, setdespessss] = useState({})
-    const [discursos, setdiscursos] = useState([])
-    const [eventos, seteventos] = useState([])
-    const [frentes, setfrentes] = useState([])
-    const [ocupacoes, setocupacoes] = useState([])
-    const [orgaos, setorgaos] = useState([])
-    const [profissoes, setprofissoes] = useState([])
+
+
+
+    const [deputados, setDeputados] = useState({})
+    // const [despesas, setDespesas] = useState({})
 
     useEffect(() => {
-
         const id = props.match.params.id
 
         apiCamara.get(`/deputados/${id}`).then(resultado => {
-            setdeputados(resultado.data.dados);
+            setDeputados(resultado.data.dados);
         })
 
-        apiCamara.get(`/deputados/${id}/despesas`).then(resultado => {
-            setdespessss(resultado.data.dados);
-        })
-
-        apiCamara.get(`/deputados/${id}/discursos`).then(resultado => {
-            setdiscursos(resultado.data.dados);
-        })
-
-        apiCamara.get(`/deputados/${id}/eventos`).then(resultado => {
-            seteventos(resultado.data.dados);
-        })
-
-        apiCamara.get(`/deputados/${id}/frentes`).then(resultado => {
-            setfrentes(resultado.data.dados);
-        })
-
-        apiCamara.get(`/deputados/${id}/ocupacoes`).then(resultado => {
-            setocupacoes(resultado.data.dados);
-        })
-
-        apiCamara.get(`/deputados/${id}/orgaos`).then(resultado => {
-            setorgaos(resultado.data.dados);
-        })
-        apiCamara.get(`/deputados/${id}/profissoes`).then(resultado => {
-            setproficoes(resultado.data.dados);
-        })
+        // apiCamara.get(`/deputados/${id}/despesas`).then(resultado => {
+        //     setDespesas(resultado.data);
+        // })
+        
     }, [props])
-
 
     console.log(deputados)
 
     return (
-        <Container>
-            <h1>Página Deatalhes Deputados</h1>
-            
+        
+        <>
+        
+            {deputados.id && 
+            <>
+                <Row>
+                    <Col md={3}>
+                        <Card>
+                            <CardImg variant="top" src={deputados.ultimoStatus.urlFoto} />
+                        </Card>
+                    </Col>
+                    <Col md={3}>
+                        <h1>{deputados.nomeCivil}</h1>
+                        <p>UF: {deputados.ufNascimento}</p>
+                        <p>Data de nascimento: {deputados.dataNascimento}</p>
+                        <p>Sexo: {deputados.sexo}</p>
+                        
+                        
+                        {/* <p>Popularidade: {deputados.popularity}</p>
+                        <p>Lançamento: {deputados.release_date}</p>
+                        <p>Generos:
+                            {deputados.genres.map((genre, indexg) => (
+                                <span key={indexg}> {genre.name} | </span>
+                            ))}
+                        </p>
+                        <p>Empresas:
+                            {deputados.production_companies.map(company => (
+                                <span key={company.id}>
+                                    <img
+                                        height="30px"
+                                        src={`https://image.tmdb.org/t/p/w500/${company.logo_path}`}
+                                        alt={company.name}
+                                        title={company.name}
+                                    />
+                                </span>
+                            ))}
+                        </p> */}
+                    </Col>
+                </Row>
 
-        </Container>
+        
+
+            {/* {despesas.id &&
+                <Row>
+                    {creditos.cast.map((ator,) => (
+                        <Col key={ator.id} md={2}>
+                            <p>{ator.name}</p>
+                            <Card>
+                                <CardImg variant="top" src={`https://image.tmdb.org/t/p/w500/${ator.profile_path}`} />
+                            </Card>
+                        </Col>
+                    ))
+                    }
+                </Row>
+            } */}
+        
+        </>
+        }
+    </>
     )
 }
+
 
 export default DeputadosDetalhes

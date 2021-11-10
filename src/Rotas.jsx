@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 import Blocos from './pages/Blocos';
 import Deputados from './pages/Deputados';
+import DeputadosDetalhes from './pages/DeputadosDetalhes';
 import Eventos from './pages/Eventos';
 import Frentes from './pages/Frentes';
 import Legislaturas from './pages/Legislaturas';
@@ -19,6 +20,7 @@ const Rotas = () => {
 
             <Route exact path="/" component={PaginaInicial}/>
             <Route exact path="/deputados" component={Deputados}/>
+            <Route exact path="/deputados/:id" component={DeputadosDetalhes}/>
             <Route exact path="/legislaturas" component={Legislaturas}/>
             <Route exact path="/blocos" component={Blocos}/>
             <Route exact path="/eventos" component={Eventos}/>

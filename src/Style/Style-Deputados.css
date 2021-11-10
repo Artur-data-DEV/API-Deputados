@@ -1,6 +1,6 @@
 .deputados{
-    height: 100vh;
-    weight: 100vh;
+    height: 100%;
+    weight: 100%;
     background-color: grey;
-    min-width: 100vh;
+    
 }

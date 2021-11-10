@@ -28,7 +28,7 @@ const Deputados = () => {
 
             <Row className="mt-4">
                 {deputados.map(deputado => (
-                    <Col key={deputado.id} md={2} className="mb-3">
+                    <Col key={deputado.id} md={3} className="mb-3">
 
                         <Cartao
                             title={deputado.nome} src={deputado.urlFoto} >

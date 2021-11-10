@@ -18,7 +18,11 @@ import Orgaos from "../assets/icons/orgaos.png"
 const PaginaInicial = () => {
   return (
 
+    <>
+    <h1 class='h1'>Câmara dos Deputados</h1>
     <div class='pagina' >
+
+      
 
       <Container className="container"  >
         <Col md={6} >
@@ -92,6 +96,8 @@ const PaginaInicial = () => {
         </Col>
       </Container>
     </div>
+</>
+    
 
 
 

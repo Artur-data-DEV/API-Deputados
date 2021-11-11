@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, Container, Image, Row, Col } from "react-bootstrap";
+import { ListGroup, Container, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../Style/Style-PaginaInicial.css";
 import logo from "../assets/icons/cienciapolitica.png";

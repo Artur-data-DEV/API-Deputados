@@ -13,7 +13,7 @@ const Menu = () => {
     <div>
       <Navbar bg="dark" variant="dark" >
         <Container fluid >
-          <Navbar.Brand href="/"><img src={logo}/></Navbar.Brand>
+          <Navbar.Brand href="/"><img src={logo} alt="logo"/></Navbar.Brand>
           <Nav>
             <Link className="nav-link" to="/blocos">
               Blocos 
@@ -49,7 +49,7 @@ const Menu = () => {
 
           
 
-          </Nav>
+            </Nav>
           <Form className="d-flex">
               <FormControl
 
@@ -60,6 +60,7 @@ const Menu = () => {
               />
               <Button variant="outline-success">Search</Button>
             </Form>
+            
         </Container>
       </Navbar>
     </div>

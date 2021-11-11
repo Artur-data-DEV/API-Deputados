@@ -7,7 +7,7 @@ const Cartao = (props) => {
     return (
         <>
           <Card sx={{ maxWidth: 345 }} >
-                  <Card.Img  componentvariant="darkcenter" src={props.src} sx={{ width: 100, height: 100, alignItems: 'center', display: 'flex' }} />
+                  <Card.Img  componentvariant="darkcenter" src={props.src} sx={{alignItems: 'center', display: 'flex' }} />
                   <Card.Body>
                     <Card.Title>{props.title} </Card.Title>
                     <hr />

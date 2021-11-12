@@ -9,10 +9,17 @@
 }
 
 .Col2{
-    background-color: silver;
-    padding: 10px;
-   
+    background-color: black;
+    padding: 10px;   
     border-radius: 10px;
 
 
+}
+
+.h1{
+    text-align: center;
+    border-radius: 20px;
+    color: darkblue;
+    font-style: oblique;
+    
 }

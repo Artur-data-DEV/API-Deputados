@@ -19,12 +19,14 @@ const PaginaInicial = () => {
   return (
 
     <>  
+     
     <div class='pagina' >
 
-      
-
+  
+    
       <Container className="container"  >
-        <Col md={6} >
+        
+        <Col md={8} >
           <ListGroup className='listGroup'>
             <ListGroup.Item className='listGroupItem' >
               <img src={Blocos} alt="Blocos" />
@@ -57,9 +59,12 @@ const PaginaInicial = () => {
               </Link>
             </ListGroup.Item>
           </ListGroup>
-        </Col>
-        <img src={logo} alt="Logo"/>
-        <Col md={6}>
+        </Col>  
+     
+
+        <h1 style={{marginTop:"-50px", textAlign: "center", fontSize: '40px', color: "white ", textShadow: '2px 0 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000'}}> Câmara dos Deputados <img src={logo} alt="Logo"/> </h1>
+      
+        <Col md={8}>
           <ListGroup className='listGroup'>
             <ListGroup.Item className="listGroupItem2" >
               <Link className="links" to="/partidos">

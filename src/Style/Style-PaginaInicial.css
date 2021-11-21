@@ -17,6 +17,7 @@
 }
 
 .h1{
+    
 
     text-align: center;
     justify-content:center;
@@ -33,7 +34,8 @@
 }
 
 .container{ 
-
+    width: 100vh;
+    height : 100vh;     
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +48,8 @@
 }
 
 .listGroup{
-  
+   
+    margin-top: -50px;
     text-decoration: none;
     opacity: 0.82;
     text-shadow: .2rem .2rem 2px rgba(0, 0, 0, .4);        
@@ -54,24 +57,28 @@
 }
 
 .listGroupItem {
+   
     display: flex;
     justify-content: flex-start;
     align-items:center;
-    margin: 1%;
     height: 100px;
-    padding-left: 25%;
+    width: 100%;
+    margin: 5px 0px 5px 0px;
+
+    
    
    
     
 }
 .listGroupItem2 {
+    
+  
     display: flex;
     justify-content: flex-end;
     align-items:center;
-    margin: 1%;
     height: 100px;
-    padding-right: 25%;
-
+    width: 100%;
+    margin: 5px 0px 5px 0px;
 
 }
 
@@ -96,7 +103,7 @@
     justify-content: space-between;
     
     letter-spacing: .1rem;
-    padding: 8px;
+    padding: 5px;
     text-shadow: .2rem .2rem 2px rgba(0, 0, 0, .4);     
     animation: moveBanner 0.5s 0.5s backwards;
 }

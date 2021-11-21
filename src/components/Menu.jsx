@@ -7,7 +7,6 @@ import "../Style/Style-Menu.css"
 
 
 
-
 const Menu = () => {
   return (
     <div>

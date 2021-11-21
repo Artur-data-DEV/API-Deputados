@@ -1,11 +1,15 @@
+
+body{
+    background-color: silver;
+
+}
 .Row1{
-    background-color: grey;
+    background-color: silver;
     padding-top: 10px;
   
 }
 .Col1{
-    background-color: grey;
-    padding-top: 10px;
+    background-color: silver;
 }
 
 .Col2{
@@ -16,3 +20,36 @@
 
 
 }
+
+#gastos{
+    background-color: silver;
+}
+
+.nome{
+    text-align: center;
+    font-size: 15px
+}
+.blocoFoto{
+    margin-left: 50px;
+    padding: 400px
+}
+
+.partido{
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: silver;
+    text-align: center
+}
+#orgaos{
+    text-align: center
+
+}
+
+#frentes{
+    text-align: center
+}
+
+
+

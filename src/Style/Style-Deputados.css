@@ -1,6 +1,22 @@
-.deputados{
+.deputados {
     height: 100%;
-    weight: 100%;
-    background-color: grey;
-    
+    weight: 100%    ;
+    background-color: silver;
+    margin-top: -24px;
+    padding-top: 20px;
+
 }
+
+.h2 {
+    color: black;
+    text-align: center;
+    background-color: silver;
+    border: 5px solid;
+    padding: 5px;
+}
+
+body{
+    background-color: silver;
+
+}
+

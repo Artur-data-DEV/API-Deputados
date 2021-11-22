@@ -10,10 +10,11 @@ body{
 }
 .Col1{
     background-color: silver;
+    margin-left: 5px;
 }
 
 .Col2{
-    background-color: silver;
+ 
     padding: 10px;
    
     border-radius: 10px;
@@ -36,11 +37,12 @@ body{
 
 .partido{
     border-radius: 50px;
-    border: 1px solid white;
-    padding: 15px;
+    border: 1px solid black;
+    padding: 1px 0px 10px 0px;
     margin-top: 10px;
-    background-color: silver;
-    text-align: center
+    background-color: grey;
+    text-align: center;
+    color: black
 }
 #orgaos{
     text-align: center
@@ -48,6 +50,10 @@ body{
 }
 
 #frentes{
+    text-align: center
+}
+
+#eventos{
     text-align: center
 }
 

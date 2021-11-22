@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Card, CardImg, Col, Row } from 'react-bootstrap'
 import Cartao from '../components/Cartao.jsx'
 import Options from '../components/Options.jsx'
@@ -8,14 +7,11 @@ import apiCamara from '../services/apiCamara.js'
 import Money from "../assets/icons/money.png"
 import OrgaosIcon from "../assets/icons/partido-politico.png"
 import "../Style/Style-DeputadosDetalhes.css"
-import blocosIcon from '../assets/icons/blocos.png'
-import orgaosIcon from '../assets/icons/orgaos.png'
 import gastosIcon from '../assets/icons/gastos.png'
-import votacoesIcon from '../assets/icons/votacoes.png'
 import frentesIcon from '../assets/icons/agreement.png'
 import eventosIcon from '../assets/icons/calendar.png'
 
-import legislaturasIcon from '../assets/icons/legislaturas.png'
+
 
 
 const DeputadosDetalhes = (props) => {
@@ -50,12 +46,12 @@ const DeputadosDetalhes = (props) => {
             })
         })
 
-        apiCamara.get(`/deputados/${id}/despesas`).then(resultado => {
+        apiCamara.get(`/deputados/${id}/despesas?itens=12&ordem=ASC`).then(resultado => {
             setDespesas(resultado.data.dados);
 
         })
 
-        apiCamara.get(`/deputados/${id}/orgaos`).then(resultado => {
+        apiCamara.get(`/deputados/${id}/orgaos?itens=9&ordem=ASC&ordenarPor=nomeOrgao`).then(resultado => {
             setOrgaos(resultado.data.dados);
 
         })
@@ -63,7 +59,7 @@ const DeputadosDetalhes = (props) => {
             setFrentes(resultado.data.dados);
 
         })
-        apiCamara.get(`/deputados/${id}/eventos`).then(resultado => {
+        apiCamara.get(`/deputados/${id}/eventos?itens=6&ordem=ASC&ordenarPor=dataHoraInicio`).then(resultado => {
             setEventos(resultado.data.dados);
 
         })
@@ -99,23 +95,18 @@ const DeputadosDetalhes = (props) => {
     }
 
     function formatarDataEvento(params) {
-        const dataEventoInicio = params
-        const arrayEvento = dataEventoInicio.split("T")
-        
-        const dataEvento = arrayEvento[0]
-        const dataEventoFormatada = dataEvento.split("-")
+        let dataEvento = params
+        let arrayEvento = dataEvento.split("T")
+        let dataEventoFormatada = arrayEvento[0].split("-")
         const dataEventoFinal = dataEventoFormatada[2] + '/' + dataEventoFormatada[1] + '/' + dataEventoFormatada[0]
-        
         const horaEvento = arrayEvento[1]
-
-    
         return [dataEventoFinal, horaEvento]
-          
-   
 
     }
 
-    
+
+
+
 
     return (
 
@@ -127,7 +118,7 @@ const DeputadosDetalhes = (props) => {
                     <Row className="Row1">
                         <Col md={3} className="Col1">
                             <Cartao >
-                                <Card>
+                                <Card >
                                     <CardImg variant="top" src={deputados.ultimoStatus.urlFoto} style={{ width: "283px", height: "300px" }} />
                                 </Card>
                                 <br />
@@ -139,18 +130,25 @@ const DeputadosDetalhes = (props) => {
                                 <p>Data de nascimento: {formatarDataNascimento()}</p>
                                 <p>Data de falecimento: {formatarDataFalecimento()}</p>
 
+
                             </Cartao>
                         </Col>
-                        <Col md={8} className="Col2" style={{ backgroundColor: "black", width: "73%" }} >
+                        <Col md={4} className="Col2" style={{ backgroundColor: "black", width: "73%" }} >
 
 
+
+                            <br />
+
+
+                            <Deputado >
                             <div class="partido">
-
+                                <h5> PARTIDO</h5>
                                 <a href={`/partidos/${idPartido}`}><img src={!partido.urlLogo ? "Carregando..." : partido.urlLogo} alt="Logo partido" /></a>
 
                             </div>
                             <br />
-                            <Deputado >
+
+                                <p> Nome Eleitoral: {deputados.ultimoStatus.nomeEleitoral || 'N/A'}</p>
                                 <p>Descrição: {deputados.ultimoStatus.descricaoStatus || 'N/A'}</p>
                                 <p>Condição Eleitoral: {deputados.ultimoStatus.condicaoEleitoral}</p>
                                 <p>E-mail: {deputados.ultimoStatus.gabinete.email}</p>
@@ -163,7 +161,7 @@ const DeputadosDetalhes = (props) => {
                                 <div style={{ paddingLeft: "1px", paddingTop: "5px", display: "flex", justifyContent: "space-between" }}>
 
                                     <p style={{ textAlign: "center" }}>Gastos <br /><a href='#gastos'><img src={gastosIcon} alt="gastos" style={{ width: "100px" }} /></a></p>
-                                    <p style={{ textAlign: "center" }}>Orgãos <br /><a href='#orgaos'><img src={orgaosIcon} alt="orgaos" style={{ width: "100px" }} /></a></p>
+                                    <p style={{ textAlign: "center" }}>Orgãos <br /><a href='#orgaos'><img src={OrgaosIcon} alt="orgaos" style={{ width: "100px" }} /></a></p>
                                     <p style={{ textAlign: "center" }}>Frentes <br /><a href='#frentes'><img src={frentesIcon} alt="frentes" style={{ width: "100px" }} /></a></p>
                                     <p style={{ textAlign: "center" }}>Eventos <br /><a href='#eventos'><img src={eventosIcon} alt="eventos" style={{ width: "100px" }} /></a></p>
 
@@ -191,15 +189,16 @@ const DeputadosDetalhes = (props) => {
                             </Row>
                         </div>
 
-                        <div id="orgaos" style={{ backgroundColor: "grey" }}>
+                        <div id="orgaos" style={{ backgroundColor: "silver" }}>
                             <Row className="mt-4">
                                 <h2 style={{ color: "black", textAlign: "center", backgroundColor: "silver", border: "5px solid", padding: "5px" }}>ORGÃOS </h2> {orgaos.map((orgao, i) => (
 
                                     <Col key={i} md={4} className="mb-3">
                                         <Cartao title={orgao.siglaOrgao}  >
-                                            <p style={{ backgroundColor: "black", borderRadius: "40px 0px", padding: "4%" }}> <a style={{ textDecoration: "none", color: "white" }} href={`/orgaos/${orgao.idOrgao}`}><img src={OrgaosIcon} alt="Orgaos" width='50px' /> {orgao.nomeOrgao}</a> <br /> </p>
+                                            <p style={{ backgroundColor: "purple", borderRadius: "40px 0px", padding: "4%", fontSize: "12px", display: "flex", justifyContent: "center", alignItems: "center" }}> <img src={OrgaosIcon} alt="Orgaos" width='50px' height="50px" /> <a style={{ textDecoration: "none", color: "white" }} href={`/orgaos/${orgao.idOrgao}`}>{orgao.nomePublicacao}</a> <br /> </p>
                                             <p style={{ textAlign: "center", color: "blue" }}> Cargo: {orgao.titulo} </p>
-                                            <p style={{ textAlign: "center" }}> {orgao.nomePublicacao}</p>
+                                            <p style={{ textAlign: "center", fontSize: "12px" }}> {orgao.nomeOrgao}</p>
+
                                         </Cartao>
 
                                     </Col>
@@ -209,7 +208,7 @@ const DeputadosDetalhes = (props) => {
 
                             </Row>
                         </div>
-                        
+
                         <div id="frentes">
                             <Row className="mt-4">
                                 <h2 style={{ color: "black", textAlign: "center", backgroundColor: "silver", border: "5px solid", padding: "5px" }}>FRENTES </h2> {frentes.map((frente) => (
@@ -234,29 +233,19 @@ const DeputadosDetalhes = (props) => {
 
                         <div id="eventos">
                             <Row className="mt-4">
-                                <h2 style={{ color: "black", textAlign: "center", backgroundColor: "silver", border: "5px solid", padding: "5px" }}>EVENTOS </h2> {eventos.map((evento) => (
-
+                                <h2 style={{ color: "black", textAlign: "center", backgroundColor: "silver", border: "5px solid", padding: "5px" }}>EVENTOS </h2>
+                                {eventos.map((evento) => (
                                     <Col key={evento.id} md={4} className="mb-3">
                                         <Cartao title={evento.descricaoTipo}  >
-
-
                                             <p style={{ backgroundColor: "red", borderRadius: "40px 0px", padding: "4%" }}> <a style={{ textDecoration: "none", color: "white" }} href={`/eventos/${evento.id}`}><img src={eventosIcon} alt="eventos" width='50px' /> {evento.descricaoTipo}</a> <br /> </p>
-                                            <p style={{ textAlign: "center", color: "blue" }}> Data: {formatarDataEvento(evento.dataHoraInicio)[0]} às {formatarDataEvento(evento.dataHoraInicio)[1]} até {evento.dataHoraFim}</p>
+                                            <p style={{ textAlign: "center", color: "blue" }}> Inicio: {formatarDataEvento(evento.dataHoraInicio)[0]} às {formatarDataEvento(evento.dataHoraInicio)[1]} <br />Fim: {evento.dataHoraFim ? formatarDataEvento(evento.dataHoraFim)[0] + " às " + `${formatarDataEvento(evento.dataHoraFim)[1]}` : "N/A"}</p>
                                             <p style={{ textAlign: "center" }}> {""}</p>
-
                                         </Cartao>
-
                                     </Col>
                                 ))}
-
-
-
                             </Row>
                         </div>
-
-
                     </Row>
-
                 </>
             }
         </>

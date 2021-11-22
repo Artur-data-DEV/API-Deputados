@@ -13,7 +13,7 @@ const Deputados = () => {
 
     useEffect(() => {
 
-        apiCamara.get('/deputados').then(resultado => {
+        apiCamara.get('/deputados?ordem=ASC&ordenarPor=siglaPartido').then(resultado => {
             setdeputados(resultado.data.dados);
         })
     }, [])

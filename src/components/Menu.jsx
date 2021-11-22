@@ -17,7 +17,7 @@ const Menu = () => {
             <Link className="nav-link" to="/blocos">
               Blocos 
             </Link>
-            <Link className="nav-link" to="/deputados">
+            <Link className="nav-link" to="/deputados?ordem=ASC&ordenarPor=siglaPartido">
               Deputados
             </Link>
             <Link className="nav-link" to="/eventos">

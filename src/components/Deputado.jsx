@@ -10,7 +10,7 @@ const Deputado = (props) => {
                 <Card.Img componentVariant="darkcenter" src={props.src} sx={{ alignItems: 'center', display: 'flex' }} />
                 <Card.Body>
                     <Card.Title>{props.title} </Card.Title>
-                    <h3 style={{ textAlign: 'center', paddingRight: "10px" }}> Detalhes</h3>
+                    <h3 style={{ textAlign: 'center'}}> Detalhes</h3>
                     <hr />
                     <Card.Text>
                         {props.children}
